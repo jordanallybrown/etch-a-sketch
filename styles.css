@@ -1,0 +1,41 @@
+* { 
+    margin: 0;
+    padding: 0;
+    /* the border box seems to fix the horizontal scroll 
+    bar issue when trying to make the body take up the full
+    screen. Seems weird, idk everything that border-box does */
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh; 
+    text-align: center;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+#container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* cool trick - padding sets the sizing for the box */
+    /* can't set padding or it can cause overflow... */
+    /* padding: 8px; */
+    border: 1px solid rgb(82, 65, 82);
+  }
+
+#container{
+    /* flex: 1; */
+    display: grid;
+    width: 75%;
+    height: 700px;
+    /* so you don't actually need both columns and rows for 
+    the template defined. I had to remove the padding size
+    from the div which was causing overflow. the 1fr will make
+    them size equally for each other with the space available */
+    /* grid-template-columns: repeat(10, 1fr); */
+    /* grid-template-rows: repeat(100, 1fr); */
+    background-color: rgb(248, 201, 209);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
